@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Создать портфолио</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 </head>
 <body>
     <header>
@@ -58,11 +58,49 @@
                 <textarea id="description" rows="5" required
                           placeholder="Расскажите о вашем проекте..."></textarea>
             </div>
-        
+
+            <div class="form-group">
+                <label for="experience">Стаж работы (лет):</label>
+                <input 
+                    type="number" 
+                    id="experience" 
+                    min="0" 
+                    max="50" 
+                    oninput="this.value = Math.abs(this.value)">
+              </div>
+              
+              <div class="form-group">
+                <label for="projects">Примеры проектов (через запятую):</label>
+                <textarea id="projects" rows="3" placeholder="Мой магазин, Корпоративный сайт..."></textarea>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Контактный телефон:</label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    pattern="^\+?[0-9()\s-]{7,}$"
+                    title="Формат: +7 (999) 123-45-67">
+                </div>
+                
+                <div class="form-group">
+                  <label for="contact-email">Email для связи:</label>
+                  <input type="email" id="contact-email">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="skills">Ключевые навыки:</label>
+                <input type="text" id="skills" placeholder="HTML, CSS, JavaScript...">
+              </div>
+
             <div class="form-actions">
                 <button type="submit" class="primary-btn">Опубликовать проект</button>
                 <button type="button" class="secondary-btn" id="save-draft">Сохранить черновик</button>
             </div>
+
+            
         </form>
     </main>
 
@@ -71,7 +109,7 @@
     </footer>
 
     
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
     
 </body>
 </html>
