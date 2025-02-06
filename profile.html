@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Личный кабинет</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="create-portfolio.html">Создать портфолио</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="profile-info">
+            <h2>Добро пожаловать, <span id="username-display"></span>!</h2>
+            <p>Здесь будет информация о вашем профиле.</p>
+            <button id="logout-button">Выйти</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Сайт портфолио</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

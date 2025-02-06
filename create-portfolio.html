@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать портфолио</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Создать портфолио</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="login.html">Личный кабинет</a>
+        </nav>
+    </header>
+
+    <main>
+        <form id="create-portfolio-form" class="enhanced-form">
+            <div class="form-group">
+                <label for="title">Название проекта <span class="required">*</span></label>
+                <input type="text" id="title" required 
+                       placeholder="Мой крутой проект">
+            </div>
+        
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="category">Категория <span class="required">*</span></label>
+                    <select id="category" required>
+                        <option value="">Выберите категорию</option>
+                        <option value="web">Веб-разработка</option>
+                        <option value="design">Дизайн</option>
+                        <option value="marketing">Маркетинг</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tags">Теги</label>
+                    <input type="text" id="tags" placeholder="Введите теги через запятую">
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label for="image">Изображение проекта</label>
+                <div class="image-upload">
+                    <input type="url" id="image" 
+                           placeholder="https://example.com/image.jpg"
+                           pattern="https?://.+\.(jpg|jpeg|png|webp)">
+                    <div class="image-preview" id="image-preview"></div>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label for="description">Описание проекта <span class="required">*</span></label>
+                <textarea id="description" rows="5" required
+                          placeholder="Расскажите о вашем проекте..."></textarea>
+            </div>
+        
+            <div class="form-actions">
+                <button type="submit" class="primary-btn">Опубликовать проект</button>
+                <button type="button" class="secondary-btn" id="save-draft">Сохранить черновик</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Сайт портфолио</p>
+    </footer>
+
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>

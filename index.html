@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Портфолио</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Портфолио</h1>
+        <nav>
+            <a href="create-portfolio.html">Создать портфолио</a>
+            <a href="login.html">Личный кабинет</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Список портфолио</h2>
+
+        <div class="filter-panel">
+            <div class="filter-group">
+                <label>Категории:</label>
+                <select class="multi-select" multiple id="filter-categories">
+                    <option value="web">Веб-разработка</option>
+                    <option value="design">Дизайн</option>
+                    <option value="marketing">Маркетинг</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Сортировка:</label>
+                <div class="sort-controls">
+                    <select id="sort-by" class="multi-select">
+                        <option value="date">По дате</option>
+                        <option value="title">По названию</option>
+                    </select>
+                    <select id="sort-order" class="multi-select">
+                        <option value="asc">По возрастанию</option>
+                        <option value="desc">По убыванию</option>
+                    </select>
+                </div>
+            </div>
+        
+            <div class="filter-group">
+                <label>Поиск:</label>
+                <input type="text" id="search-term" placeholder="Введите ключевые слова..." 
+                       class="multi-select">
+            </div>
+        </div>
+
+        <div id="portfolio-list">
+            <!-- Здесь будут отображаться портфолио -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Сайт портфолио</p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
